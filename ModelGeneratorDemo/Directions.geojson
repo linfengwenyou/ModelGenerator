@@ -1,0 +1,10 @@
+{
+    "data": {
+        "goods_thumb": "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b7db1c6aa.jpg?imageView2\/2\/w\/600\/h\/1334\/format\/jpg\/q\/75\/",
+        "goods_img": ["http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b7db1c6aa.jpg?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b7f40ae8b.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b7fe4749a.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b802f0786.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b80749a4f.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b8094b314.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b805547f8.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b80aafa7b.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b7e196749.jpg?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b800ecfbf.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b7f948e3c.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/", "http:\/\/img.yishouapp.com\/2018\/08\/27\/5b83b7e79b0d8.JPG?imageView2\/2\/w\/1000\/format\/jpg\/q\/85\/"],
+        "good_deatail_shareh5": "http:\/\/y3s.yishouapp.com\/h5\/description.html?goods_id=8007100",
+        "replenishment_id": "0"
+    },
+    "msg": "success",
+    "code": "200"
+}
