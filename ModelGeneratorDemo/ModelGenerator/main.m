@@ -23,11 +23,11 @@ int main(int argc, const char * argv[]) {
                 type = 0;
             }
         }
-        [NSObject DY_makeModelWithJsonPath:path prefix:@"FM" outsideModelName:@"GeneratorModel" makeType:type];
+        [NSObject ra_generatorModelWithJsonPath:path prefix:@"FM" outsideModelName:@"GeneratorModel" makeType:type];
 
         // 调试使用
 //        NSString *filePath = [NSHomeDirectory() stringByAppendingString:@"/Desktop/ModelGenerator/Directions.geojson"];
-//        [NSObject DY_makeModelWithJsonPath:filePath prefix:@"FM" outsideModelName:@"TESTMODEL" makeType:RAModelGeneratorTypeYY];
+//        [NSObject ra_generatorModelWithJsonPath:filePath prefix:@"FM" outsideModelName:@"TESTMODEL" makeType:RAModelGeneratorTypeYY];
 //
     }
     return 0;

@@ -29,13 +29,13 @@ typedef NS_ENUM(NSInteger,RAModelGeneratorType) {
  @param generatorType 使用MJExtension 还是YYModel 自动生成模型中系统关键字替换和数组中字典转模型语法代码
  
  */
-+ (void)DY_makeModelWithDictionary:(NSDictionary *)dictionary
++ (void)ra_generatorModelWithDictionary:(NSDictionary *)dictionary
                             prefix:(NSString *)prefix
                   outsideModelName:(NSString *)outsideModelName
                           makeType:(RAModelGeneratorType)generatorType;
 
 /** 通过json文件配置 */
-+ (void)DY_makeModelWithJsonPath:(NSString *)jsonPath
++ (void)ra_generatorModelWithJsonPath:(NSString *)jsonPath
                             prefix:(NSString *)prefix
                   outsideModelName:(NSString *)outsideModelName
                           makeType:(RAModelGeneratorType)generatorType;

@@ -70,7 +70,7 @@ static RAHeadModel *_headModel;
 }
 
 
-+ (void)DY_makeModelWithDictionary:(NSDictionary *)dictionary
++ (void)ra_generatorModelWithDictionary:(NSDictionary *)dictionary
                             prefix:(NSString *)prefix
                   outsideModelName:(NSString *)outsideModelName
                           makeType:(RAModelGeneratorType)generatorType
@@ -81,7 +81,7 @@ static RAHeadModel *_headModel;
     }
     _generatorType = generatorType;
     _prefix = prefix ?: @"";
-    _headModel = [self dy_makeModelWithDictionary:dictionary ModelName:outsideModelName];
+    _headModel = [self ra_generatorModelWithDictionary:dictionary ModelName:outsideModelName];
 
     // 执行脚本命令
     RALog(@"====================@interface==================\n\n%@\n\n%@\n====================@implementation====================\n\n%@\n\n",_headModel.className,_headModel.head,_headModel.footer);
@@ -90,7 +90,7 @@ static RAHeadModel *_headModel;
 
 
 /** 通过json文件配置 */
-+ (void)DY_makeModelWithJsonPath:(NSString *)jsonPath
++ (void)ra_generatorModelWithJsonPath:(NSString *)jsonPath
                             prefix:(NSString *)prefix
                   outsideModelName:(NSString *)outsideModelName
                           makeType:(RAModelGeneratorType)generatorType
@@ -106,7 +106,7 @@ static RAHeadModel *_headModel;
     NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
     id dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     if ([dict isKindOfClass:[NSDictionary class]]) {
-        [self DY_makeModelWithDictionary:dict prefix:prefix outsideModelName:outsideModelName makeType:generatorType];
+        [self ra_generatorModelWithDictionary:dict prefix:prefix outsideModelName:outsideModelName makeType:generatorType];
     } else {
         RALog(@"wrong type");
     }
@@ -115,7 +115,7 @@ static RAHeadModel *_headModel;
 
 #pragma mark - private
 
-+ (RAHeadModel *)dy_makeModelWithDictionary:(NSDictionary *)dictionary ModelName:(NSString *)modelName {
++ (RAHeadModel *)ra_generatorModelWithDictionary:(NSDictionary *)dictionary ModelName:(NSString *)modelName {
     
     if (!dictionary) return nil;
     
@@ -221,7 +221,7 @@ static RAHeadModel *_headModel;
 + (RAGeneratorModel *)modelWithDictionary:(id)obj ModelName:(NSString *)modelName MakeModel:(RAGeneratorModel *)model Dictionary:(NSDictionary *)dictionary{
     
     [model.headStr appendString:[NSString stringWithFormat:@"%@%@Model *%@;\n",dictionaryClass, [self capitalized:obj],obj]];
-    RAHeadModel *headModel = [self dy_makeModelWithDictionary:dictionary[obj] ModelName:[NSString stringWithFormat:@"%@Model",obj]];
+    RAHeadModel *headModel = [self ra_generatorModelWithDictionary:dictionary[obj] ModelName:[NSString stringWithFormat:@"%@Model",obj]];
     
     [model.classArray addObject:headModel.className];
     [model.headArray addObject:headModel.head];
@@ -234,7 +234,7 @@ static RAHeadModel *_headModel;
     [model.headStr appendString:[NSString stringWithFormat:@"%@%@;\n",arrayClass,obj]];
     id resault = [self returnFirstObjWithArr:dictionary[obj]];
     if ([resault isKindOfClass:[NSDictionary class]]) {
-        RAHeadModel *headModel = [self dy_makeModelWithDictionary:resault ModelName:[NSString stringWithFormat:@"%@Model",obj]];
+        RAHeadModel *headModel = [self ra_generatorModelWithDictionary:resault ModelName:[NSString stringWithFormat:@"%@Model",obj]];
         
         [model.classArray addObject:headModel.className];
         [model.headArray addObject:headModel.head];
