@@ -15,16 +15,20 @@
 #else
 # define RALog(...);
 #endif
-static NSString *stringClass = @"/** <#desc#> */\n@property (nonatomic, copy)   NSString *";
-static NSString *numberClass = @"/** <#desc#> */\n@property (nonatomic, strong) NSNumber *";
-static NSString *nsnullClass = @"/** <#desc#> */\n@property (nonatomic, strong) id ";
-static NSString *dictionaryClass = @"/** <#desc#> */\n@property (nonatomic, strong) ";
-static NSString *arrayClass = @"/** <#desc#> */\n@property (nonatomic, strong) NSArray *";
 static NSString *MJ_ReplaceId = @"\n+(NSDictionary *)mj_replacedKeyFromPropertyName {\n  return @{@\"Id\" : @\"id\"};\n\n}";
 static NSString *YY_ReplaceId = @"\n+(NSDictionary *)modelCustomPropertyMapper {\n  return @{@\"Id\" : @\"id\"};\n\n}";
 static NSString *MJ_ArrIncludeDicToModelString = @"mj_objectClassInArray";
 static NSString *YY_ArrIncludeDicToModelString = @"modelContainerPropertyGenericClass";
 
+
+static NSString *stringClass;
+static NSString *numberClass;
+static NSString *nsnullClass;
+static NSString *dictionaryClass;
+static NSString *arrayClass;
+
+/** 语言类型 */
+static NSInteger lauguageType;
 
 @implementation NSObject (ModelGenerator)
 
@@ -67,6 +71,25 @@ static RAHeadModel *_headModel;
 + (void)setHeadModel:(RAHeadModel *)headModel
 {
     _headModel = headModel;
+}
+
++ (void)configureWithiOSType:(NSUInteger)type
+{
+    lauguageType = type;
+    if ( type == 0) {
+        
+        stringClass = @"/** <#desc#> */\n@property (nonatomic, copy)   NSString *";
+        numberClass = @"/** <#desc#> */\n@property (nonatomic, strong) NSNumber *";
+        nsnullClass = @"/** <#desc#> */\n@property (nonatomic, strong) id ";
+        dictionaryClass = @"/** <#desc#> */\n@property (nonatomic, strong) ";
+        arrayClass = @"/** <#desc#> */\n@property (nonatomic, strong) NSArray *";
+    } else {
+        stringClass = @"/** <#desc#> */\nvar ";
+        numberClass = @"/** <#desc#> */\nvar ";
+        nsnullClass = @"/** <#desc#> */\nvar ";
+        dictionaryClass = @"/** <#desc#> */\nvar ";
+        arrayClass = @"/** <#desc#> */\nvar ";
+    }
 }
 
 
@@ -188,6 +211,12 @@ static RAHeadModel *_headModel;
 
 + (RAGeneratorModel *)modelWithString:(id)obj ModelName:(NSString *)modelName MakeModel:(RAGeneratorModel *)model{
     
+    if (lauguageType == 1) {
+        [model.headStr appendString:[NSString stringWithFormat:@"%@%@:String?\n", stringClass, obj]];
+        return model;
+    }
+    
+    
     if ([obj isEqualToString:@"id"]) {
         [model.headStr appendString:[NSString stringWithFormat:@"%@%@Id;\n", stringClass, modelName]];
         //将id映射到Id
@@ -204,6 +233,11 @@ static RAHeadModel *_headModel;
 }
 
 + (RAGeneratorModel *)modelWithNumber:(id)obj ModelName:(NSString *)modelName MakeModel:(RAGeneratorModel *)model {
+    
+    if (lauguageType == 1) {
+        [model.headStr appendString:[NSString stringWithFormat:@"%@%@:String?\n", stringClass, obj]];
+        return model;
+    }
     
     if ([obj isEqualToString:@"id"]) {
         [model.headStr appendString:[NSString stringWithFormat:@"%@%@Id;\n", numberClass, modelName]];

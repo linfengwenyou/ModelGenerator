@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger,RAModelGeneratorType) {
 @property (nonatomic, strong, class) NSString *prefix;
 @property (nonatomic, strong, class) RAHeadModel *headModel;
 
+/** 配置类型 0 为普通类型， 1为swift类型*/
++ (void)configureWithiOSType:(NSUInteger)type;
+
 /**
  根据字典打印出对应属性模型
  
