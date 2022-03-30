@@ -1,0 +1,58 @@
+{
+  "_buildCommand2" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildAndRun"
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "a7d61f4f6af62f85760a2f99ba276dc2bac601afbe3b241f59fdefbdc4f6f241"
+    }
+  ],
+  "containerPath" : "/Users/rayor/temporary/ModelGenerator/ModelGeneratorDemo/ModelGenerator.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx12.1",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64",
+        "arm64e",
+        "arm64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/rayor/temporary/ModelGenerator/ModelGeneratorDemo/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/rayor/temporary/ModelGenerator/ModelGeneratorDemo/Build/Products",
+      "derivedDataPath" : "/Users/rayor/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/rayor/Library/Developer/Xcode/DerivedData/ModelGenerator-dedwbkfmamghitcddpaghpbosihc/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/rayor/Library/Developer/Xcode/DerivedData/ModelGenerator-dedwbkfmamghitcddpaghpbosihc/Index/PrecompiledHeaders",
+      "pchPath" : "/Users/rayor/temporary/ModelGenerator/ModelGeneratorDemo/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

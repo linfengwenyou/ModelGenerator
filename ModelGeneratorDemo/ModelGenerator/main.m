@@ -30,7 +30,7 @@ int main(int argc, const char * argv[]) {
             [NSObject configureWithiOSType:0];
         }
         
-        [NSObject ra_generatorModelWithJsonPath:path prefix:@"FM" outsideModelName:@"GeneratorModel" makeType:type];
+        [NSObject ra_generatorModelWithJsonPath:path prefix:@"LM" outsideModelName:@"GeneratorModel" makeType:type];
 
         // 调试使用
 //        NSString *filePath = [NSHomeDirectory() stringByAppendingString:@"/TempGit/ModelGenerator/ModelGeneratorDemo/Directions.geojson"];

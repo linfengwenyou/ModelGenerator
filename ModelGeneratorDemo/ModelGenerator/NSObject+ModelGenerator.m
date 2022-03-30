@@ -79,7 +79,7 @@ static RAHeadModel *_headModel;
     if ( type == 0) {
         
         stringClass = @"/** <#desc#> */\n@property (nonatomic, copy)   NSString *";
-        numberClass = @"/** <#desc#> */\n@property (nonatomic, strong) NSNumber *";
+        numberClass = @"/** <#desc#> */\n@property (nonatomic, assign) NSInteger ";
         nsnullClass = @"/** <#desc#> */\n@property (nonatomic, strong) id ";
         dictionaryClass = @"/** <#desc#> */\n@property (nonatomic, strong) ";
         arrayClass = @"/** <#desc#> */\n@property (nonatomic, strong) NSArray *";
